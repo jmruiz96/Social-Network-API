@@ -1,4 +1,4 @@
-//given from instructors
+//given from instructors but have no clue how it works
 const addDateSuffix = (date) => {
     let dateStr = date.toString();
   
@@ -66,3 +66,12 @@ const addDateSuffix = (date) => {
   
     return formattedTimeStamp;
   };
+  //Matt B helped me come up with this time formatting
+  module.exports = {
+    formatDate(date){
+        return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`
+    },
+    formatTime(time){
+        return new Date(time).toLocaleTimeString()
+    }
+}

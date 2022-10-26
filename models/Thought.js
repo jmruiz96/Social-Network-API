@@ -1,6 +1,11 @@
 const { Schema, model } = require('mongoose');
 const Reactions = require('./Reaction');
 const { formatDate, formatTime } = require('../utils/dateFormat');
+//`thoughtText`
+// * `createdAt`
+// * `username` (The user that created this thought)
+// * `reactions` 
+
 const thoughtSchema = new Schema(
     {thoughtText: {
         type: String,
@@ -23,6 +28,7 @@ const thoughtSchema = new Schema(
 {
     toJSON: {
         virtuals: true,
+        getters: true
     },
     id: false
 }
